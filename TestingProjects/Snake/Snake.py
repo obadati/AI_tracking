@@ -2,9 +2,10 @@ import random
 import cvzone
 import cv2
 import math
+import os
 import numpy as np
 from HandTrackingModule import HandDetector
-
+directory_path = os.path.dirname(__file__)
 cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720)
@@ -91,7 +92,7 @@ class SnakeGameClass:
         return imgMain
 
 
-game = SnakeGameClass("Snake/Donut.png")
+game = SnakeGameClass(os.path.join(directory_path, "Donut.png"))
 
 while True:
     success, img = cap.read()
