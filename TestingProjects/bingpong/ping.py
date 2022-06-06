@@ -2,17 +2,23 @@ import cv2
 import cvzone
 from HandTrackingModule import HandDetector
 import numpy as np
-
+import os
+directory_path = os.path.dirname(__file__)
 cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720)
 
 # Importing all images
-imgBackground = cv2.imread("bingpong/Resources/Background.png")
-imgGameOver = cv2.imread("bingpong/Resources/gameOver.png")
-imgBall = cv2.imread("bingpong/Resources/Ball.png", cv2.IMREAD_UNCHANGED)
-imgBat1 = cv2.imread("bingpong/Resources/bat1.png", cv2.IMREAD_UNCHANGED)
-imgBat2 = cv2.imread("bingpong/Resources/bat2.png", cv2.IMREAD_UNCHANGED)
+imgBackground = cv2.imread(os.path.join(
+    directory_path, "Resources/Background.png"))
+imgGameOver = cv2.imread(os.path.join(
+    directory_path, "Resources/gameOver.png"))
+imgBall = cv2.imread(os.path.join(
+    directory_path, "Resources/Ball.png"), cv2.IMREAD_UNCHANGED)
+imgBat1 = cv2.imread(os.path.join(
+    directory_path, "Resources/bat1.png"), cv2.IMREAD_UNCHANGED)
+imgBat2 = cv2.imread(os.path.join(
+    directory_path, "Resources/bat2.png"), cv2.IMREAD_UNCHANGED)
 
 # Hand Detector
 detector = HandDetector(detectionCon=0.8, maxHands=2)
