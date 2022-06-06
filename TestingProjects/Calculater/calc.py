@@ -1,5 +1,5 @@
 import cv2
-from cvzone.HandTrackingModule import HandDetector
+from HandTrackingModule import HandDetector
 
 
 class Button:
@@ -50,13 +50,15 @@ myEquation = ''
 delayCounter = 0
 # Webcam
 cap = cv2.VideoCapture(0)
+cap.set(3, 1280)
+cap.set(4, 720)
 detector = HandDetector(detectionCon=0.8, maxHands=1)
 
 while True:
     # Get image frame
     success, img = cap.read()
     img = cv2.flip(img, 1)
-    print(detector.findHands(img))
+    # print(detector.findHands(img))
     hands, img = detector.findHands(img)
 
     # Draw All
