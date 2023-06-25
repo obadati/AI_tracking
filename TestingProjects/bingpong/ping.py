@@ -9,6 +9,7 @@ cap.set(3, 1280)
 cap.set(4, 720)
 
 # Importing all images
+
 imgBackground = cv2.imread(os.path.join(
     directory_path, "Resources/Background.png"))
 imgGameOver = cv2.imread(os.path.join(

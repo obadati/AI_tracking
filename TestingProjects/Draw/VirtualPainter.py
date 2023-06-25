@@ -10,8 +10,9 @@ eraserThickness = 100
 ########################
 
 
-folderPath = "Draw/Header"
+folderPath = "Draw\Header"
 myList = os.listdir(folderPath)
+print()
 # print(myList)
 overlayList = []
 for imPath in myList:
